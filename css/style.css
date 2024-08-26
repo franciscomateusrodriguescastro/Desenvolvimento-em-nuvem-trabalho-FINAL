@@ -7,12 +7,12 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  color: #333;
-  background-color: #f4f4f4;
+  color: #404040;
+  background-color: #bababa;
 }
 
 header {
-  background-color: #333;
+  background-color: #0091ff;
   color: #fff;
   position: fixed;
   top: 0;
