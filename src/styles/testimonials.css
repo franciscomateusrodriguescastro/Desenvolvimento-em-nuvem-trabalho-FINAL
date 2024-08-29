@@ -124,7 +124,7 @@
 }
 
 .feedback-content input[type="submit"] {
-    background-color: #4CAF50; /* Cor do botão (verde) */
+    background-color: #7063a1; /* Cor do botão (verde) */
     color: white; /* Cor do texto do botão */
     padding: 10px 20px;
     border: none;
@@ -134,7 +134,7 @@
 }
 
 .feedback-content input[type="submit"]:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    background-color: #d3c1e2; /* Cor do botão ao passar o mouse */
 }
 
 .feedback-content p {
@@ -145,3 +145,4 @@
 .feedback-content p span {
     color: var(--color-primary-6);
 }
+88 /* Cor das estrelas */
