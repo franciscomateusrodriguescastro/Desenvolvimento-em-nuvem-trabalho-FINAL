@@ -93,15 +93,15 @@
                     </div>
 
                     <div class="social-media-buttons">
-                        <a href="">
+                        <a href="#">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
 
-                        <a href="">
+                        <a href="#">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
 
-                        <a href="">
+                        <a href="#">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
                     </div>
@@ -180,7 +180,7 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
-                            <span>(600+)</span>
+                            <span>(350+)</span>
                         </div>
 
                         <div class="dish-price">
@@ -288,40 +288,61 @@
                                 alt="avatar"
                             />
 
-                        <div class="feedback-content">
-                            <form action="/enviar_comentario" method="POST">
-                                <label for="nome">Nome:</label><br>
-                                <input type="text" id="nome" name="nome" required><br><br>
+                            <div class="feedback-content">
+                                <form id="feedback_form">
+                                    <label for="nome">Nome:</label><br />
+                                    <input
+                                        type="text"
+                                        id="nome"
+                                        name="nome"
+                                        required
+                                    /><br /><br />
 
-                                <label for="email">Email:</label><br>
-                                <input type="email" id="email" name="email" required><br><br>
+                                    <label for="email">Email:</label><br />
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                    /><br /><br />
 
-                                <label for="comentario">Comentário:</label><br>
-                                <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
+                                    <label for="comentario">Comentário:</label
+                                    ><br />
+                                    <textarea
+                                        id="comentario"
+                                        name="comentario"
+                                        rows="4"
+                                        cols="50"
+                                        required
+                                    ></textarea
+                                    ><br /><br />
 
-                                <input type="submit" value="Enviar Comentário">
-                            </form>
+                                    <input
+                                        type="submit"
+                                        value="Enviar Comentário"
+                                    />
+                                </form>
+                            </div>
                         </div>
-
+                    </div>
+                </div>
             </section>
         </main>
 
         <footer>
-            <img src="src/images/wave.svg" alt="onda" />
-
             <div id="footer_items">
                 <span id="copyrigth"> &copy 2024 UNIFOR </span>
 
                 <div class="social-media-buttons">
-                    <a href="">
+                    <a href="#">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
 
-                    <a href="">
+                    <a href="#">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <a href="">
+                    <a href="#">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
                 </div>
@@ -330,9 +351,42 @@
 
         <script src="src/javascript/script.js"></script>
         <script>
-            / Initialize Parse
-                    Parse.initialize("YOUR_PARSE_APP_ID", "YOUR_PARSE_JS_KEY");
-                     Parse.serverURL = "https://parseapi.back4app.com/";
+            // Initialize Parse
+            Parse.initialize(
+                "7dSGhRME1sWvHdbkzBgxIesJ11zipcHh7P9fJtmU",
+                "HjifmXBfFlqz7Nx6732qm4wYe78dvIEqAa0aowO9",
+            );
+            Parse.serverURL = "https://parseapi.back4app.com/";
+
+            // Handle form submission
+            document
+                .getElementById("feedback_form")
+                .addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    const nome = document.getElementById("nome").value;
+                    const email = document.getElementById("email").value;
+                    const comentario =
+                        document.getElementById("comentario").value;
+
+                    const Feedback = Parse.Object.extend("Feedback");
+                    const feedback = new Feedback();
+
+                    feedback.set("nome", nome);
+                    feedback.set("email", email);
+                    feedback.set("comentario", comentario);
+
+                    feedback
+                        .save()
+                        .then(() => {
+                            alert("Comentário enviado com sucesso!");
+                        })
+                        .catch((error) => {
+                            alert(
+                                "Erro ao enviar comentário: " + error.message,
+                            );
+                        });
+                });
         </script>
     </body>
 </html>
