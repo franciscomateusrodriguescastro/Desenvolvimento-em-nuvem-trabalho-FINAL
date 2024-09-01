@@ -18,7 +18,7 @@
 }
 
 #cta .title span {
-    color: var(--color-primary-6);
+    color: var(--color-primary-3);
 }
 
 #cta .description {
@@ -36,7 +36,7 @@
 }
 
 #phone_button {
-    display: flex;  
+    display: flex;
     gap: 8px;
     align-items: center;
     background-color: #ffffff;
@@ -51,6 +51,7 @@
 #phone_button button {
     box-shadow: none;
 }
+
 #banner {
     display: flex;
     align-items: start;
@@ -99,4 +100,3 @@
         display: none;
     }
 }
-

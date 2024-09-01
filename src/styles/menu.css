@@ -35,12 +35,17 @@
     align-items: center;
     justify-content: center;
     font-size: 1.563rem;
-    color: var(--color-primary-1);
+    color: var(--color-neutral-0);
     width: 70px;
     height: 70px;
     right: -10px;
     top: -10px;
     border-radius: 0px 37.5px 0px 42.5px;
+    transition: color 0.3s ease;
+}
+
+.dish-heart:hover {
+    color: var(--color-primary-7);
 }
 
 .dish-image {
@@ -55,7 +60,7 @@
 }
 
 .dish-rate i {
-    color: var(--color-primary-6);
+    color: var(--color-primary-8);
 }
 
 .dish-price {
