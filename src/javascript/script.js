@@ -115,3 +115,4 @@ async function deleteDish(objectId) {
     const data = await response.json();
     console.log("Deleted:", data);
 }
+

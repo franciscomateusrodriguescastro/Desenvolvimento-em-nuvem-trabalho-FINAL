@@ -325,6 +325,12 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Section for displaying existing comments -->
+                    <div id="existing_feedbacks">
+                        <h3>Comentários Recentes:</h3>
+                        <div id="feedback_list"></div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -380,6 +386,7 @@
                         .save()
                         .then(() => {
                             alert("Comentário enviado com sucesso!");
+                            loadFeedbacks(); // Reload feedbacks after successful submission
                         })
                         .catch((error) => {
                             alert(
@@ -387,6 +394,30 @@
                             );
                         });
                 });
+
+            function loadFeedbacks() {
+                const Feedback = Parse.Object.extend("Feedback");
+                const query = new Parse.Query(Feedback);
+
+                // Ordena os comentários pela data de criação em ordem decrescente
+                query.descending("createdAt");
+
+                query.find().then((results) => {
+                    const feedbackList =
+                        document.getElementById("feedback_list");
+                    feedbackList.innerHTML = "";
+
+                    results.forEach((feedback) => {
+                        const listItem = document.createElement("div");
+                        listItem.className = "feedback-item";
+                        listItem.innerHTML = `
+                            <p><strong>${feedback.get("nome")}</strong></p>
+                            <p>${feedback.get("comentario")}</p>
+                        `;
+                        feedbackList.appendChild(listItem);
+                    });
+                });
+            }
         </script>
     </body>
 </html>
