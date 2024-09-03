@@ -7,7 +7,7 @@
 }
 
 #testimonial_chef {
-    width: 500px;
+    width: 600px;
     height: auto;
     border-radius: 10px;
 }
@@ -69,7 +69,7 @@
 
     #testimonials .section-subtitle {
         text-align: center;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     #testimonial_chef {
@@ -154,11 +154,11 @@
 
 /* Estilo para a seção de feedbacks */
 #existing_feedbacks {
-    margin-top: 40px;
-    padding: 20px;
+    margin-top: 50px;
+    padding: 25px;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
     max-height: 400px;
     /* Limite de altura para a área de feedbacks */
     overflow-y: auto;
@@ -166,9 +166,9 @@
 }
 
 #existing_feedbacks h3 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
+    margin-bottom: 35px;
+    color: #634488;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
 }
