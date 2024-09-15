@@ -387,6 +387,15 @@
                         .save()
                         .then(() => {
                             alert("Comentário enviado com sucesso!");
+
+                            // Limpar os campos
+                            document.getElementById("nome").value = "";
+                            document.getElementById("email").value = "";
+                            document.getElementById("comentario").value = "";
+
+                            // Se quiser ocultar o formulário após o envio:
+                            // document.getElementById("feedback_form").style.display = "none";
+
                             loadFeedbacks(); // Reload feedbacks after successful submission
                         })
                         .catch((error) => {
@@ -412,9 +421,9 @@
                         const listItem = document.createElement("div");
                         listItem.className = "feedback-item";
                         listItem.innerHTML = `
-                            <p><strong>${feedback.get("nome")}</strong></p>
-                            <p>${feedback.get("comentario")}</p>
-                        `;
+                    <p><strong>${feedback.get("nome")}</strong></p>
+                    <p>${feedback.get("comentario")}</p>
+                `;
                         feedbackList.appendChild(listItem);
                     });
                 });
