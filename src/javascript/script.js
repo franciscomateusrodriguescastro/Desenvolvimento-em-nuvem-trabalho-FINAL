@@ -83,6 +83,7 @@ async function createDish(dish) {
     });
     const data = await response.json();
     console.log("Created:", data);
+    
 }
 
 // Função para ler todos os registros
